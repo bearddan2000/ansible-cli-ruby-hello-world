@@ -74,7 +74,8 @@ function usage() {
 function start-up(){
 
     scope="start-up"
-    docker_img_name="ansible-cli-ruby-hello-world"
+
+    docker_img_name=`head -n 1 README.md | sed 's/# //'`
     info_base="[$timestamp INFO]: $basefile::$scope"
 
     echo "$info_base started" >> $logfile
